@@ -1,8 +1,112 @@
-#app {
+*{
+  margin: 0;
+  padding: 0;
+}
+*{
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+}
+body{
+  background: url('/static/image.jpg') no-repeat center;
+  background-size: cover;
+}
+#app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  /* backdrop-filter: blur(10%); */
+  backdrop-filter: blur(10px);
+}
+.container{
+  backdrop-filter: blur(50px);
+  /* filter: blur(50px); */
+}
+.main{
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 718px;
+  height: 553px;
+  background: linear-gradient(119.28deg, rgba(255, 255, 255, 0.4) 3.08%, rgba(196, 196, 196, 0.1) 77.63%);
+  box-shadow: 0px 1px 25px -1px rgba(0, 0, 0, 0.1);
+
+  border: 1px solid;
+  border-image-slice: 1;
+  border-image-source:linear-gradient(45deg,
+  rgba(255, 255, 255, 0.5) 0%,
+  rgba(255, 255, 255, 0) 30.65%,
+  rgba(255, 255, 255, 0.0719) 62.81%,
+  rgba(255, 255, 255, 0.5) 100%);
+
+}
+.left, .right{
+  display: flex;
+  justify-content: center;
+  position: relative;
+  align-items: center;
+  flex-direction: column;
+  width: 50%;
+  height: 100%;
+}
+.left img{
+  width: 200px;
+  height: 200px;
+  box-shadow: 1px 0px 20px 12px rgba(240, 240, 240, 0.2);
+  clip-path: circle(50%);
+  /* animation: rotate 2s linear infinite; */
+}
+@keyframes rotate {
+  0%{
+    transform: rotate(0deg);
+  }100%{
+    transform: rotate(360deg);
+  }
+}
+input[type="range"]{
+  -webkit-appearance: none;
+  width: 50%;
+  outline: none;
+  height: 2px;
+  margin: 0 15px;
+  /* background-color: grey; */
+  background-image: linear-gradient(
+    90deg,
+    #000 0%,
+    #fff 50%
+  );
+}
+input[type="range"]::-webkit-slider-thumb{
+  -webkit-appearance: none;
+  height: 20px;
+  width: 20px;
+  background-color: white;
+  cursor: pointer;
+  border-radius: 50%;
+}
+.volume input[type="range"]{
+  width: 200px;
+}
+.volume{
+  display: flex;
+  justify-content: center;
+  position: relative;
+  margin: 20px;
+  margin-top: 50px;
+}
+.volume p, .volume i{
+  width: 30px;
+  height: 30px;
+  margin: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+}
+#volume_slider{
+  transform: translateY(20px);
 }

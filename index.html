@@ -3,11 +3,42 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite App</title>
   </head>
   <body>
-    <div id="app"></div>
+    <p id="logo" style="position: absolute;">	&#xf001 Music</p>
+    <div id="app">
+      <div class="container">
+      <div class="main">
+      <div class="left">
+        <img src="static/image.jpg" alt="" id="tract_image">
+        <div class="volume">
+          <p id="volume_show">90</p>
+          <i class="fa fa-volume-up" aria-hidden="true" id="volume_up" onclick="mute_sound()"></i>
+          <input type="range" name="" id="volume_slider" min="0" max="100" value="90">
+      </div>
+    </div>
+    <div class="right">
+      <div class="show_song_no">
+        <p id="present">1</p>
+        <p>/</p>
+        <p id="total">5</p>
+      </div>
+      <p class="title">Title.mp3</p>
+      <p class="artist">Artist</p>
+      <div class="middle">
+        <button id="pre"><i class="fa fa-step-backward" aria-hidden="true"></i></button>
+        <button id="play"><i class="fa fa-play" aria-hidden="true"></i></button>
+        <button id="next"><i class="fa fa-step-forward" aria-hidden="true"></i></button>
+      </div>
+      <div class="duration"><input type="range" name="" min="0" max="100" value="0" id="duration_slider"></div>
+      <button id="auto" onclick="autoplay_switch()">Auto play <i class="fa fa-circle-o-notch" aria-hidden="true"></i></button>
+    </div>
+  </div>
+</div>
+    </div>
     <script type="module" src="/main.js"></script>
   </body>
 </html>
