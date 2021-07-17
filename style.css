@@ -18,12 +18,9 @@ body{
   align-items: center;
   width: 100vw;
   height: 100vh;
-  /* backdrop-filter: blur(10%); */
-  backdrop-filter: blur(10px);
 }
 .container{
-  backdrop-filter: blur(50px);
-  /* filter: blur(50px); */
+  backdrop-filter: blur(40px) !important;
 }
 .main{
   z-index: 1;
@@ -37,11 +34,12 @@ body{
 
   border: 1px solid;
   border-image-slice: 1;
-  border-image-source:linear-gradient(45deg,
-  rgba(255, 255, 255, 0.5) 0%,
-  rgba(255, 255, 255, 0) 30.65%,
-  rgba(255, 255, 255, 0.0719) 62.81%,
-  rgba(255, 255, 255, 0.5) 100%);
+  border-image-source:linear-gradient(135deg,
+    rgba(255, 255, 255, 0.5) 0%,
+    rgba(255, 255, 255, 0) 30.65%,
+    rgba(255, 255, 255, 0.0719) 62.81%,
+    rgba(255, 255, 255, 0.5) 100%
+  );
 
 }
 .left, .right{
@@ -58,7 +56,7 @@ body{
   height: 200px;
   box-shadow: 1px 0px 20px 12px rgba(240, 240, 240, 0.2);
   clip-path: circle(50%);
-  /* animation: rotate 2s linear infinite; */
+  animation: rotate 4s linear infinite;
 }
 @keyframes rotate {
   0%{
@@ -74,11 +72,10 @@ input[type="range"]{
   height: 2px;
   margin: 0 15px;
   /* background-color: grey; */
-  background-image: linear-gradient(
-    90deg,
-    #000 0%,
-    #fff 50%
-  );
+  background: gray;
+  overflow: hidden;
+  cursor: pointer;
+
 }
 input[type="range"]::-webkit-slider-thumb{
   -webkit-appearance: none;
@@ -87,6 +84,7 @@ input[type="range"]::-webkit-slider-thumb{
   background-color: white;
   cursor: pointer;
   border-radius: 50%;
+  box-shadow: -200px 0 0 200px white;
 }
 .volume input[type="range"]{
   width: 200px;
@@ -148,8 +146,7 @@ input[type="range"]::-webkit-slider-thumb{
   border: none;
   width: 100px;
   height: 30px;
-}
-.duration{
+  border-radius: 5px;
 }
 .duration > input[type='range']{
   width: 200%;
