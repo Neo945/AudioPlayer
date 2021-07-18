@@ -21,6 +21,7 @@ body{
 }
 .container{
   backdrop-filter: blur(40px) !important;
+  border-radius: 20px;
 }
 .main{
   z-index: 1;
@@ -40,7 +41,6 @@ body{
     rgba(255, 255, 255, 0.0719) 62.81%,
     rgba(255, 255, 255, 0.5) 100%
   );
-
 }
 .left, .right{
   display: flex;
@@ -56,7 +56,7 @@ body{
   height: 200px;
   box-shadow: 1px 0px 20px 12px rgba(240, 240, 240, 0.2);
   clip-path: circle(50%);
-  animation: rotate 4s linear infinite;
+  /* animation: rotate 4s linear infinite; */
 }
 @keyframes rotate {
   0%{
@@ -96,7 +96,7 @@ input[type="range"]::-webkit-slider-thumb{
   margin: 20px;
   margin-top: 50px;
 }
-.volume p, .volume i{
+.volume p, .volume #volume_up{
   width: 30px;
   height: 30px;
   margin: 5px;

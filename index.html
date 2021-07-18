@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite App</title>
   </head>
@@ -16,7 +16,7 @@
         <img src="static/image.jpg" alt="" id="tract_image">
         <div class="volume">
           <p id="volume_show">90</p>
-          <i class="fa fa-volume-up" aria-hidden="true" id="volume_up" onclick="mute_sound()"></i>
+          <div id="volume_up"><i class="fa fa-volume-up" aria-hidden="true"></i></div>
           <input type="range" name="" id="volume_slider" min="0" max="100" value="90">
       </div>
     </div>
@@ -33,7 +33,7 @@
         <button id="play"><i class="fa fa-play" aria-hidden="true"></i></button>
         <button id="next"><i class="fa fa-step-forward" aria-hidden="true"></i></button>
       </div>
-      <button id="auto">Auto play <i class="fa fa-circle-o-notch" aria-hidden="true"></i></button>
+      <button id="auto">Auto play <i class="fas fa-redo" aria-hidden="true"></i></button>
       <div class="duration"><input type="range" name="" min="0" max="100" value="0" id="duration_slider"></div>
     </div>
   </div>

@@ -18,6 +18,7 @@ let autoplay = 0;
 let index_no = 0;
 let playing_song = false;
 let track = document.createElement('audio');
+let cvolume = 0;
 let allsongs = [
     {
         name: 'AOT',
@@ -49,10 +50,12 @@ function playsong() {
     track.play();
     playing_song = true;
     play.innerHTML = '<i class="fa fa-pause"></i>';
+    tract_image.style.animation = 'rotate 4s linear infinite';
 }
 function pausesong() {
     track.pause();
     playing_song = false;
+    tract_image.style.animation = '';
     play.innerHTML = '<i class="fa fa-play"></i>';
 }
 next.addEventListener('click',next_song);
@@ -68,14 +71,30 @@ function next_song() {
     }
     autoplay = 0;
 }
+volume_up.addEventListener('click',()=>{
+    if (!track.muted){
+        cvolume = volume_slider.value;
+        volume_slider.value = document.querySelector('#volume_show').innerHTML = 0;
+        volume_up.innerHTML = '<i class="fa fa-volume-mute" aria-hidden="true"></i>';
+        track.muted = true;
+    }else{
+        volume_slider.value = document.querySelector('#volume_show').innerHTML = cvolume;
+        volume_up.innerHTML = '<i class="fa fa-volume-up" aria-hidden="true"></i>';
+        track.muted = false;
+    }
+});
 previous.addEventListener('click',previous_song);
 function previous_song() {
     if (index_no > 0){
         index_no--;
         load_track(index_no);
         playsong();
+        // tract_image.style.animation = '';
+        // tract_image.style.animation = 'rotate 4s linear infinite';
     }else{
         index_no = 0;
+        // tract_image.style.animation = '';
+        // tract_image.style.animation = 'rotate 4s linear infinite';
         load_track(index_no);
         playsong();
     }
